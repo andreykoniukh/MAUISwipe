@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="MAuiMenu.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:MAuiMenu" 
+    xmlns:views="clr-namespace:MAuiMenu"
+    Shell.FlyoutBehavior="Flyout"
+    Title="MAuiMenu">
+    <FlyoutItem Route="job" Title="First PAge"    x:Name="JobItem" FlyoutDisplayOptions="AsSingleItem" >
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Grid HeightRequest="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding FlyoutIcon}"  Margin="10"   HeightRequest="30" />
+                    <Label Grid.Column="1"    Text="{Binding Title}"    FontSize="Default"     VerticalTextAlignment="Center" />
+                </Grid>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <Tab>
+            <ShellContent x:Name="JobDay"  Route="JobDay"   Title="First Tab">
+                <views:DayPage BackgroundColor="White"></views:DayPage>
+            </ShellContent>
+            <ShellContent x:Name="JobWeek" Title="Second Tab">
+                <views:WeekPage BackgroundColor="White"></views:WeekPage>
+            </ShellContent>
+            
+
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Route="job" Title="Second page"     x:Name="JobItem2" FlyoutDisplayOptions="AsSingleItem" >
+        <Shell.ItemTemplate>
+            <DataTemplate>
+                <Grid HeightRequest="50">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="0.2*" />
+                        <ColumnDefinition Width="0.8*" />
+                    </Grid.ColumnDefinitions>
+                    <Image Source="{Binding FlyoutIcon}"  Margin="10"   HeightRequest="30" />
+                    <Label Grid.Column="1"   Text="{Binding Title}"    FontSize="Default"        VerticalTextAlignment="Center" />
+                </Grid>
+            </DataTemplate>
+        </Shell.ItemTemplate>
+        <Tab>
+            <ShellContent x:Name="JobDay2"  Route="JobDay2"   Title="First Tab">
+                <views:DayPage BackgroundColor="White"></views:DayPage>
+            </ShellContent>
+            <ShellContent x:Name="JobWee2k" Title="Second Tab">
+                <views:WeekPage BackgroundColor="White"></views:WeekPage>
+            </ShellContent>
+
+
+        </Tab>
+    </FlyoutItem>
+    <ShellContent
+        Title="Home"
+        ContentTemplate="{DataTemplate local:MainPage}"
+        Route="MainPage" />
+
+</Shell>

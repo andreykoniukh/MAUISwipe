@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MAuiMenu.WeekPage"
+             Title="Second Tab">
+    <Grid  Padding="10" VerticalOptions="Fill" HorizontalOptions="Fill">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <CollectionView   Grid.Column="0" Grid.Row="0"  ItemsSource="{Binding Items}"  VerticalOptions="FillAndExpand" >
+            <CollectionView.ItemsLayout>
+                <LinearItemsLayout  Orientation="Vertical" ItemSpacing="5"/>
+            </CollectionView.ItemsLayout>
+            <CollectionView.ItemTemplate >
+                <DataTemplate >
+                    <SwipeView>
+                        <SwipeView.RightItems>
+                            <SwipeItem Text="option 1"/>
+                            <SwipeItem Text=" option 2"/>
+                        </SwipeView.RightItems>
+
+                        <Grid  VerticalOptions="Fill"  RowSpacing="2" Margin="2" Padding="2" ColumnSpacing="3"  HorizontalOptions="Fill">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto"/>
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*"/>
+                            </Grid.ColumnDefinitions>
+                            <Label HorizontalTextAlignment="End" TextColor="Black"  VerticalOptions="Start" VerticalTextAlignment="Start" Text="{Binding Name}" Grid.Column="0" Grid.Row="0"/>
+                        </Grid>
+                    </SwipeView>
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </Grid>
+</ContentPage>
